@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import Button from './button';
 
 class Contador extends Component{
 
@@ -29,21 +30,11 @@ class Contador extends Component{
     return(
       <View style={styles.container}>
         <View style={styles.subcontainer}>
-          <TouchableOpacity
-            style={styles.btn}
-            onPress={this.reducir}
-            >
-            <Text style={styles.btnText}>-</Text>
-          </TouchableOpacity>
+          <Button label={'-'} action={this.reducir}/>
           <View style={styles.counterContainer}>
             <Text style={styles.counter}>{counter}</Text>
           </View>
-          <TouchableOpacity
-            style={styles.btn}
-            onPress={this.incrementar}
-          >
-            <Text style={styles.btnText}>+</Text>
-          </TouchableOpacity>
+          <Button label={'+'} action={this.incrementar}/>
         </View>
       </View>
     );
@@ -62,19 +53,6 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingHorizontal: 10,
     flexDirection: 'row'
-  },
-  btn:{
-    width: 50,
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ecf0f1',
-    borderRadius: 2
-  },
-  btnText:{
-    fontSize: 30,
-    color: '#7f8c8d',
-    fontWeight: 'bold'
   },
   counterContainer:{
     flex: 1,
