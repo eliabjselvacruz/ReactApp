@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   StyleSheet
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 class Button extends Component{
  render(){
@@ -18,6 +19,11 @@ class Button extends Component{
     </TouchableOpacity>
    );
  }
+}
+
+Button.propTypes = {
+  label: PropTypes.string,
+  action: PropTypes.func,
 }
 
 const styles = StyleSheet.create({
