@@ -9,13 +9,19 @@ class Contador extends Component{
     this.state = {
       counter: 0,
     };
+    console.log('Constructor');
     this.incrementar = this.incrementar.bind(this);
     this.reducir = this.reducir.bind(this);
+  }
+
+  componentWillMount(){
+    console.log('componentWillMount');
   }
 
   incrementar(){
     const { counter: ct } = this.state;
     this.setState({counter: ct + 1});
+
   }
 
   reducir(){
@@ -24,6 +30,8 @@ class Contador extends Component{
   }
 
   render(){
+
+    console.log('reder');
 
     const { counter } = this.state;
 
